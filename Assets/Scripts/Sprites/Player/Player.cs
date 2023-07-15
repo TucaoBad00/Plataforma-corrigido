@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     private float currentspeed;
     public Animator ani;
     public ParticleSystem ParticleSystemJump;
+    public AudioSource jumpSound;
     #endregion
     private void Update()
     {
@@ -50,6 +51,7 @@ public class Player : MonoBehaviour
         {
             corpo.velocity = Vector2.up * PlayerParameters.jumpForce;
             if(ParticleSystemJump != null) { ParticleSystemJump.Play(); }
+            if(jumpSound != null) { jumpSound.Play(); }
         }
     }
   
